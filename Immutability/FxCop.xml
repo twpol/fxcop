@@ -1,4 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+ http://twpol.dyndns.org/projects/fxcop
+ License: Microsoft Public License (Ms-PL).
+-->
 <Rules FriendlyName="Immutability Rules">
   <Rule TypeName="ImmutableClass" Category="Immutablility" CheckId="IM0101">
     <Name>Verify classes with Immutable attribute</Name>
