@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Rules FriendlyName="Immutability Rules">
+  <Rule TypeName="ImmutableClass" Category="Immutablility" CheckId="IM0101">
+    <Name>Verify classes with Immutable attribute</Name>
+    <Description></Description>
+    <Url></Url>
+    <Resolution></Resolution>
+    <MessageLevel Certainty="90">CriticalError</MessageLevel>
+    <Email></Email>
+    <FixCategories>Breaking</FixCategories>
+    <Owner></Owner>
+  </Rule>
+</Rules>
