@@ -5,10 +5,12 @@
 -->
 <Rules FriendlyName="Immutability Rules">
   <Rule TypeName="ImmutableClass" Category="Immutablility" CheckId="IM0101">
-    <Name>Verify classes with Immutable attribute</Name>
+    <Name>Do not have mutable data in classes with Jgr.Immutable attribute</Name>
     <Description></Description>
     <Url></Url>
-    <Resolution></Resolution>
+    <Resolution Name="ReadonlyField">Field '{0}' must be marked 'readonly'.</Resolution>
+    <Resolution Name="PropertySetter">Property '{0}' must not have a setter.</Resolution>
+    <Resolution Name="MutableMemberType">Member '{0}' must not have mutable type '{1}'.</Resolution>
     <MessageLevel Certainty="90">CriticalError</MessageLevel>
     <Email></Email>
     <FixCategories>Breaking</FixCategories>
