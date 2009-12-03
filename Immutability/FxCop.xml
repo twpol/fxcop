@@ -4,14 +4,32 @@
  License: Microsoft Public License (Ms-PL).
 -->
 <Rules FriendlyName="Immutability Rules">
-  <Rule TypeName="ImmutableClass" Category="Immutablility" CheckId="IM0101">
-    <Name>Do not have mutable data in classes with Jgr.Immutable attribute</Name>
+  <Rule TypeName="FieldReadonly" Category="Immutability" CheckId="IM0101">
+    <Name>Mark fields as readonly in immutable classes</Name>
     <Description></Description>
     <Url></Url>
-    <Resolution Name="ReadonlyField">Field '{0}' must be marked 'readonly'.</Resolution>
-    <Resolution Name="PropertySetter">Property '{0}' must not have a setter.</Resolution>
-    <Resolution Name="MutableMemberType">Member '{0}' must not have mutable type '{1}'.</Resolution>
-    <MessageLevel Certainty="90">CriticalError</MessageLevel>
+    <Resolution>Field '{0}' must be marked 'readonly'.</Resolution>
+    <MessageLevel Certainty="95">CriticalError</MessageLevel>
+    <Email></Email>
+    <FixCategories>Breaking</FixCategories>
+    <Owner></Owner>
+  </Rule>
+  <Rule TypeName="PropertySetter" Category="Immutability" CheckId="IM0102">
+    <Name>Do not declare visible property setters in immutable classes</Name>
+    <Description></Description>
+    <Url></Url>
+    <Resolution>Property '{0}' must not have a setter.</Resolution>
+    <MessageLevel Certainty="95">CriticalError</MessageLevel>
+    <Email></Email>
+    <FixCategories>Breaking</FixCategories>
+    <Owner></Owner>
+  </Rule>
+  <Rule TypeName="MemberMutable" Category="Immutability" CheckId="IM0103">
+    <Name>Do not declare data with mutable types in immutable classes</Name>
+    <Description></Description>
+    <Url></Url>
+    <Resolution>Member '{0}' must not have mutable type '{1}'.</Resolution>
+    <MessageLevel Certainty="95">CriticalError</MessageLevel>
     <Email></Email>
     <FixCategories>Breaking</FixCategories>
     <Owner></Owner>
