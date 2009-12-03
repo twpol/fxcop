@@ -8,16 +8,15 @@ using Microsoft.FxCop.Sdk;
 namespace Immutability {
 	class Utils {
 		public static bool TypeIsImmutable(TypeNode type) {
+			if (type.IsPrimitive) return true;
+			if (type is EnumNode) return true;
+			if (type is Struct) return true;
 			if (type is ArrayType) return false;
-			if (type.FullName == "System.Byte") return true;
-			if (type.FullName == "System.Sbyte") return true;
-			if (type.FullName == "System.Int16") return true;
-			if (type.FullName == "System.UInt16") return true;
-			if (type.FullName == "System.Int32") return true;
-			if (type.FullName == "System.UInt32") return true;
-			if (type.FullName == "System.Int64") return true;
-			if (type.FullName == "System.UInt64") return true;
-			if (type.FullName == "System.String") return true;
+			//if (type.IsGeneric && type.FullName.StartsWith("System.Collections.Generic.IEnumerable`1")) return true;
+			return TypeHasImmutableAttribute(type);
+		}
+
+		public static bool TypeHasImmutableAttribute(TypeNode type) {
 			foreach (var attribute in type.Attributes) {
 				if (attribute.Type.FullName == "Jgr.ImmutableAttribute") {
 					return true;
@@ -26,5 +25,9 @@ namespace Immutability {
 			return false;
 		}
 
+		public static void EnsureSourceInformation(Method method) {
+			// Just calling the Body property getter is enough. Sigh.
+			var x = method.Body;
+		}
 	}
 }

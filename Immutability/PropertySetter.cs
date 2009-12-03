@@ -12,19 +12,19 @@ namespace Immutability {
 		}
 
 		public override ProblemCollection Check(Member member) {
-			if (Utils.TypeIsImmutable(member.DeclaringType)) {
+			if (Utils.TypeHasImmutableAttribute(member.DeclaringType)) {
 				var property = member as PropertyNode;
 				if (property != null) {
 					if (!property.IsStatic) {
 						if (property.Setter != null) {
 							if ((property.Setter.Flags & MethodFlags.Private) == 0) {
-								this.Problems.Add(new Problem(GetResolution(member.FullName)));
+								base.Problems.Add(new Problem(GetResolution(member.FullName), property.Setter));
 							}
 						}
 					}
 				}
 			}
-			return this.Problems;
+			return base.Problems;
 		}
 	}
 }

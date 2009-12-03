@@ -54,9 +54,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FieldReadonly.cs" />
+    <Compile Include="ImmutableDescendants.cs" />
     <Compile Include="MemberMutable.cs" />
     <Compile Include="PropertySetter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertySetterCall.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>

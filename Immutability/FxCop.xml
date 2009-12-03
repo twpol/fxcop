@@ -24,11 +24,31 @@
     <FixCategories>Breaking</FixCategories>
     <Owner></Owner>
   </Rule>
-  <Rule TypeName="MemberMutable" Category="Immutability" CheckId="IM0103">
+  <Rule TypeName="PropertySetterCall" Category="Immutability" CheckId="IM0103">
+    <Name>Do not call property setters outside constructor in immutable classes</Name>
+    <Description></Description>
+    <Url></Url>
+    <Resolution>Property '{0}' must not be called from '{1}'.</Resolution>
+    <MessageLevel Certainty="95">CriticalError</MessageLevel>
+    <Email></Email>
+    <FixCategories>Breaking</FixCategories>
+    <Owner></Owner>
+  </Rule>
+  <Rule TypeName="MemberMutable" Category="Immutability" CheckId="IM0104">
     <Name>Do not declare data with mutable types in immutable classes</Name>
     <Description></Description>
     <Url></Url>
     <Resolution>Member '{0}' must not have mutable type '{1}'.</Resolution>
+    <MessageLevel Certainty="95">CriticalError</MessageLevel>
+    <Email></Email>
+    <FixCategories>Breaking</FixCategories>
+    <Owner></Owner>
+  </Rule>
+  <Rule TypeName="ImmutableDescendants" Category="Immutability" CheckId="IM0105">
+    <Name>Mark descendants of immutable classes as immutable</Name>
+    <Description></Description>
+    <Url></Url>
+    <Resolution>Class '{0}' must have the immutable attribute its parent, '{1}', has.</Resolution>
     <MessageLevel Certainty="95">CriticalError</MessageLevel>
     <Email></Email>
     <FixCategories>Breaking</FixCategories>

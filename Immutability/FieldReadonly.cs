@@ -12,17 +12,17 @@ namespace Immutability {
 		}
 
 		public override ProblemCollection Check(Member member) {
-			if (Utils.TypeIsImmutable(member.DeclaringType)) {
+			if (Utils.TypeHasImmutableAttribute(member.DeclaringType)) {
 				var field = member as Field;
 				if (field != null) {
 					if (!field.IsStatic) {
 						if (!field.IsInitOnly) {
-							this.Problems.Add(new Problem(GetResolution(member.FullName)));
+							base.Problems.Add(new Problem(GetResolution(member.FullName), field));
 						}
 					}
 				}
 			}
-			return this.Problems;
+			return base.Problems;
 		}
 	}
 }
