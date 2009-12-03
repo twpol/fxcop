@@ -11,12 +11,6 @@ namespace Immutability {
 			: base("PropertySetter", "Immutability.FxCop", typeof(FieldReadonly).Assembly) {
 		}
 
-		public override TargetVisibilities TargetVisibility {
-			get {
-				return TargetVisibilities.All;
-			}
-		}
-
 		public override ProblemCollection Check(Member member) {
 			if (Utils.TypeIsImmutable(member.DeclaringType)) {
 				var property = member as PropertyNode;
