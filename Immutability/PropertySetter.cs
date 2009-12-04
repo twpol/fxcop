@@ -8,7 +8,7 @@ using Microsoft.FxCop.Sdk;
 namespace Immutability {
 	class PropertySetter : BaseIntrospectionRule {
 		public PropertySetter()
-			: base("PropertySetter", "Immutability.FxCop", typeof(FieldReadonly).Assembly) {
+			: base("PropertySetter", "Immutability.FxCop", typeof(PropertySetter).Assembly) {
 		}
 
 		public override ProblemCollection Check(Member member) {

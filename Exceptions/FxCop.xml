@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+ http://twpol.dyndns.org/projects/fxcop
+ License: Microsoft Public License (Ms-PL).
+-->
+<Rules FriendlyName="Exception Rules">
+  <Rule TypeName="CatchLosesData" Category="Catches" CheckId="EX0101">
+    <Name>Catch clause might lose important exception data</Name>
+    <Description></Description>
+    <Url></Url>
+    <Resolution Name="All">No code inside the 'catch' clause calls '{0}.GetType()', '{0}.Message' or '{0}.ToString()'.</Resolution>
+    <Resolution Name="Type">No code inside the 'catch' clause calls '{0}.GetType()' or '{0}.ToString()'.</Resolution>
+    <Resolution Name="Message">No code inside the 'catch' clause calls '{0}.Message' or '{0}.ToString()'.</Resolution>
+    <MessageLevel Certainty="75">Error</MessageLevel>
+    <Email></Email>
+    <FixCategories>NonBreaking</FixCategories>
+    <Owner></Owner>
+  </Rule>
+</Rules>

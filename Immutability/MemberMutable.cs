@@ -8,7 +8,7 @@ using Microsoft.FxCop.Sdk;
 namespace Immutability {
 	class MemberMutable : BaseIntrospectionRule {
 		public MemberMutable()
-			: base("MemberMutable", "Immutability.FxCop", typeof(FieldReadonly).Assembly) {
+			: base("MemberMutable", "Immutability.FxCop", typeof(MemberMutable).Assembly) {
 		}
 
 		public override ProblemCollection Check(Member member) {

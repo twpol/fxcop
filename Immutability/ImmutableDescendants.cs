@@ -8,7 +8,7 @@ using Microsoft.FxCop.Sdk;
 namespace Immutability {
 	class ImmutableDescendants : BaseIntrospectionRule {
 		public ImmutableDescendants()
-			: base("ImmutableDescendants", "Immutability.FxCop", typeof(FieldReadonly).Assembly) {
+			: base("ImmutableDescendants", "Immutability.FxCop", typeof(ImmutableDescendants).Assembly) {
 		}
 
 		public override ProblemCollection Check(TypeNode type) {
