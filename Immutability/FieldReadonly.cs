@@ -14,12 +14,8 @@ namespace Immutability {
 		public override ProblemCollection Check(Member member) {
 			if (Utils.TypeHasImmutableAttribute(member.DeclaringType)) {
 				var field = member as Field;
-				if (field != null) {
-					if (!field.IsStatic) {
-						if (!field.IsInitOnly) {
-							base.Problems.Add(new Problem(GetResolution(member.FullName), field));
-						}
-					}
+				if ((field != null) && !field.IsStatic && !field.IsInitOnly) {
+					base.Problems.Add(new Problem(GetResolution(member.FullName), field));
 				}
 			}
 			return base.Problems;

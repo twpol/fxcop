@@ -14,14 +14,8 @@ namespace Immutability {
 		public override ProblemCollection Check(Member member) {
 			if (Utils.TypeHasImmutableAttribute(member.DeclaringType)) {
 				var property = member as PropertyNode;
-				if (property != null) {
-					if (!property.IsStatic) {
-						if (property.Setter != null) {
-							if ((property.Setter.Flags & MethodFlags.Private) == 0) {
-								base.Problems.Add(new Problem(GetResolution(member.FullName), property.Setter));
-							}
-						}
-					}
+				if ((property != null) && !property.IsStatic && (property.Setter != null) && property.Setter.IsVisibleOutsideAssembly) {
+					base.Problems.Add(new Problem(GetResolution(member.FullName), property.Setter));
 				}
 			}
 			return base.Problems;
