@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+ http://twpol.dyndns.org/projects/fxcop
+ License: Microsoft Public License (Ms-PL).
+-->
+<Rules FriendlyName="IDisposable Rules">
+  <Rule TypeName="Unclosed" Category="Close" CheckId="DS0101">
+    <Name>IDisposable object might not be explicitly disposed</Name>
+    <Description></Description>
+    <Url></Url>
+    <Resolution></Resolution>
+    <MessageLevel Certainty="75">Error</MessageLevel>
+    <Email></Email>
+    <FixCategories>NonBreaking</FixCategories>
+    <Owner></Owner>
+  </Rule>
+</Rules>
