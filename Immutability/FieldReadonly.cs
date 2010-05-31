@@ -1,6 +1,6 @@
 ﻿//------------------------------------------------------------------------------
 // http://twpol.dyndns.org/projects/fxcop
-// License: Microsoft Public License (Ms-PL).
+// License: New BSD License (BSD).
 //------------------------------------------------------------------------------
 
 using Microsoft.FxCop.Sdk;

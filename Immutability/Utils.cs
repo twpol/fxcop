@@ -1,6 +1,6 @@
 ﻿//------------------------------------------------------------------------------
 // http://twpol.dyndns.org/projects/fxcop
-// License: Microsoft Public License (Ms-PL).
+// License: New BSD License (BSD).
 //------------------------------------------------------------------------------
 
 using Microsoft.FxCop.Sdk;
@@ -12,7 +12,9 @@ namespace Immutability {
 			if (type is EnumNode) return true;
 			if (type is Struct) return true;
 			if (type is ArrayType) return false;
-			//if (type.IsGeneric && type.FullName.StartsWith("System.Collections.Generic.IEnumerable`1")) return true;
+			if (type.FullName == "System.Collections.IEnumerable") return true;
+			if (type.IsGeneric && type.FullName.StartsWith("System.Collections.Generic.IEnumerable`1")) return true;
+			if (type.IsGeneric && type.FullName.StartsWith("System.Collections.Generic.IDictionary`2")) return true;
 			return TypeHasImmutableAttribute(type);
 		}
 
