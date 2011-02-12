@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
  http://twpol.dyndns.org/projects/fxcop
- License: Microsoft Public License (Ms-PL).
+ License: License: New BSD License (BSD).
 -->
 <Rules FriendlyName="IDisposable Rules">
   <Rule TypeName="Unclosed" Category="Close" CheckId="DS0101">

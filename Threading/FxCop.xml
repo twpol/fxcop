@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+ http://twpol.dyndns.org/projects/fxcop
+ License: License: New BSD License (BSD).
+-->
+<Rules FriendlyName="Threading">
+  <Rule TypeName="CalledOnUnknownThread" Category="Allowed Threads" CheckId="TH0101">
+    <Name>Thread-bound member is called from an unknown thread</Name>
+    <Description></Description>
+    <Url></Url>
+    <Resolution>Bind caller to thread {1}. Member {0} is currently bound to thread {1}. Caller {2} is currently unbound.</Resolution>
+    <MessageLevel Certainty="100">Error</MessageLevel>
+    <Email></Email>
+    <FixCategories>NonBreaking</FixCategories>
+    <Owner></Owner>
+  </Rule>
+  <Rule TypeName="CalledOnWrongThread" Category="Allowed Threads" CheckId="TH0102">
+    <Name>Thread-bound member is called from the wrong thread</Name>
+    <Description></Description>
+    <Url></Url>
+    <Resolution>Rebind member to thread {3} or caller to thread {1}. Member {0} is currently bound to thread {1}. Caller {2} is currently bound to thread {3}.</Resolution>
+    <MessageLevel Certainty="100">Error</MessageLevel>
+    <Email></Email>
+    <FixCategories>NonBreaking</FixCategories>
+    <Owner></Owner>
+  </Rule>
+  <Rule TypeName="ThreadBindingOverridden" Category="Allowed Threads" CheckId="TH0103">
+    <Name>Member override must not attempt to re-define thread bindings</Name>
+    <Description></Description>
+    <Url></Url>
+    <Resolution>Member {0} must not be bound to thread {1} because other rules will use bindings from {2}.</Resolution>
+    <MessageLevel Certainty="100">Error</MessageLevel>
+    <Email></Email>
+    <FixCategories>NonBreaking</FixCategories>
+    <Owner></Owner>
+  </Rule>
+</Rules>

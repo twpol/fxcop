@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDisposable", "IDisposable\IDisposable.csproj", "{311E48EE-B98C-4EBB-A6D8-E561B5ECC44D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threading", "Threading\Threading.csproj", "{5FE02003-CBC7-438C-95A4-76BD5EC5D133}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{311E48EE-B98C-4EBB-A6D8-E561B5ECC44D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{311E48EE-B98C-4EBB-A6D8-E561B5ECC44D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{311E48EE-B98C-4EBB-A6D8-E561B5ECC44D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FE02003-CBC7-438C-95A4-76BD5EC5D133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FE02003-CBC7-438C-95A4-76BD5EC5D133}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FE02003-CBC7-438C-95A4-76BD5EC5D133}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FE02003-CBC7-438C-95A4-76BD5EC5D133}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

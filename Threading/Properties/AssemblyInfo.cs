@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("IDisposable FxCop rules")]
+[assembly: AssemblyTitle("Threading FxCop rules")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("JGR")]
-[assembly: AssemblyProduct("IDisposable FxCop rules")]
-[assembly: AssemblyCopyright("© JGR 2009")]
+[assembly: AssemblyProduct("Threading FxCop rules")]
+[assembly: AssemblyCopyright("© JGR 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5aa329b7-0bac-482a-83b1-b633d89f5bbc")]
+[assembly: Guid("87b5942a-bf36-4a80-b2da-454b0aa0ee00")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("JGR")]
 [assembly: AssemblyProduct("Exception FxCop rules")]
-[assembly: AssemblyCopyright("Copyright © JGR 2009")]
+[assembly: AssemblyCopyright("© JGR 2009")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
