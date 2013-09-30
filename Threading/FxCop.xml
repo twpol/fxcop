@@ -3,7 +3,7 @@
  http://twpol.dyndns.org/projects/fxcop
  License: License: New BSD License (BSD).
 -->
-<Rules FriendlyName="Threading">
+<Rules FriendlyName="Threading Rules">
   <Rule TypeName="CalledOnUnknownThread" Category="Allowed Threads" CheckId="TH0101">
     <Name>Thread-bound member is called from an unknown thread</Name>
     <Description></Description>

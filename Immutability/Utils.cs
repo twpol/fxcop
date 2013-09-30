@@ -3,6 +3,7 @@
 // License: New BSD License (BSD).
 //------------------------------------------------------------------------------
 
+using System.Linq;
 using Microsoft.FxCop.Sdk;
 
 namespace Immutability {
@@ -19,12 +20,7 @@ namespace Immutability {
 		}
 
 		public static bool TypeHasImmutableAttribute(TypeNode type) {
-			foreach (var attribute in type.Attributes) {
-				if (attribute.Type.FullName == "Jgr.ImmutableAttribute") {
-					return true;
-				}
-			}
-			return false;
+			return type.Attributes.Any(a => a.Type.Name.Name == "ImmutableAttribute");
 		}
 
 		public static void EnsureSourceInformation(Method method) {
