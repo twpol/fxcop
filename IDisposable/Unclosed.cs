@@ -10,7 +10,7 @@ using System.Text;
 using Microsoft.FxCop.Sdk;
 
 namespace IDisposable {
-	public class Unclosed : IntrospectionTracer {
+	public class Unclosed : BaseIntrospectionRule {
 		public Unclosed()
 			: base("Unclosed", "IDisposable.FxCop", typeof(Unclosed).Assembly) {
 		}
