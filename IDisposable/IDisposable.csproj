@@ -33,11 +33,11 @@
   <ItemGroup>
     <Reference Include="FxCopSdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft FxCop 1.36\FxCopSdk.dll</HintPath>
+      <HintPath>..\Libraries\FxCopSdk.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Cci, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft FxCop 1.36\Microsoft.Cci.dll</HintPath>
+      <HintPath>..\Libraries\Microsoft.Cci.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
