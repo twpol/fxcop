@@ -23,25 +23,22 @@ namespace Threading
 			if (!member.OverridesBaseClassMember)
 			{
 				var method = member as Method;
-				if ((method != null) && !member.IsStatic)
-				{
-					// Is this member one we care about?
-					var threads = Utils.GetCallOnThreadList(member);
-					if (threads.Length > 0)
-					{
-						foreach (var caller in CallGraph.CallersFor(method))
-						{
-							var callThreadName = Utils.GetThreadName(caller);
-							var callOnThreads = Utils.GetCallOnThreadList(Utils.GetBaseMember(caller));
-							if ((callThreadName.Length == 0) && (callOnThreads.Length == 0))
-							{
-								this.Problems.Add(new Problem(GetResolution(member.FullName, String.Join(", ", threads), caller.FullName), member, member.FullName + ":CalledOnUnknownThread"));
-							}
-						}
-					}
-				}
+                if ((method != null) && !member.IsStatic)
+                {
+                    // Is this member one we care about?
+                    var threads = Utils.GetCallOnThreadList(member);
+                    if (threads.Length > 0)
+                    {
+                        // Find out what threads we're called from.
+                        var callingThreads = Utils.GetCallingThreads(method);
+                        if (callingThreads.Length == 0)
+                        {
+                            Problems.Add(new Problem(GetResolution(member.FullName), member, member.FullName + ":CalledOnUnknownThread:2"));
+                        }
+                    }
+                }
 			}
-			return base.Problems;
+			return Problems;
 		}
 	}
 }

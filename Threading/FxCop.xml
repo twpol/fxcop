@@ -8,7 +8,7 @@
     <Name>Thread-bound member is called from an unknown thread</Name>
     <Description></Description>
     <Url></Url>
-    <Resolution>Bind caller to thread {1}. Member {0} is currently bound to thread {1}. Caller {2} is currently unbound.</Resolution>
+    <Resolution>Member {0} is not called from any known threads.</Resolution>
     <MessageLevel Certainty="100">Error</MessageLevel>
     <Email></Email>
     <FixCategories>NonBreaking</FixCategories>
@@ -18,7 +18,7 @@
     <Name>Thread-bound member is called from the wrong thread</Name>
     <Description></Description>
     <Url></Url>
-    <Resolution>Rebind member to thread {3} or caller to thread {1}. Member {0} is currently bound to thread {1}. Caller {2} is currently bound to thread {3}.</Resolution>
+    <Resolution>Member {0} is bound to threads {1} but is called from threads {2}.</Resolution>
     <MessageLevel Certainty="100">Error</MessageLevel>
     <Email></Email>
     <FixCategories>NonBreaking</FixCategories>

@@ -30,14 +30,14 @@ namespace Threading
 				while (member.OverridesBaseClassMember)
 				{
 					if ((threads.Length > 0) && (Utils.GetThreadName(member, false).Length == 0))
-						this.Problems.Add(new Problem(GetResolution(member.FullName, String.Join(", ", threads), member.OverriddenMember.FullName), member, member.FullName + ":ThreadBindingOverridden"));
+						Problems.Add(new Problem(GetResolution(member.FullName, string.Join(", ", threads), member.OverriddenMember.FullName), member, member.FullName + ":ThreadBindingOverridden"));
 
 					member = member.OverriddenMember;
 					method = member as Method;
 					threads = Utils.GetCallOnThreadList(member, false);
 				}
 			}
-			return base.Problems;
+			return Problems;
 		}
 	}
 }

@@ -12,16 +12,63 @@ using Microsoft.FxCop.Sdk;
 
 namespace Threading
 {
-	public static class Utils
-	{
-		public static Member GetBaseMember(Member member)
-		{
-			while (member.OverridesBaseClassMember)
-				member = member.OverriddenMember;
-			return member;
-		}
+    public static class Utils
+    {
+        public static Member GetBaseMember(Member member)
+        {
+            while (member.OverridesBaseClassMember)
+                member = member.OverriddenMember;
+            return member;
+        }
 
-		public static string[] GetCallOnThreadList(Member member)
+        static Dictionary<string, string[]> MemberThreads = new Dictionary<string, string[]>();
+
+        public static string[] GetCallingThreads(Method method)
+        {
+            return GetCallingThreads(method, new HashSet<string>());
+        }
+
+        public static string[] GetCallingThreads(Method method, HashSet<string> visited)
+        {
+            if (!MemberThreads.ContainsKey(method.FullName))
+            {
+                // This should only happen if we've recursively ended up scanning this method.
+                if (visited.Contains(method.FullName))
+                    return new string[0];
+
+                // In case there are any recursive call stacks.
+                visited.Add(method.FullName);
+
+                // Make a list of this method and each override version.
+                var methods = new List<Method>();
+                var currentMethod = method;
+                while (currentMethod != null)
+                {
+                    methods.Add(currentMethod);
+                    currentMethod = currentMethod.OverriddenMethod;
+                }
+
+                // Now get all the callers for all the methods and map them to threads (possibly recursively).
+                var threads = methods
+                    .SelectMany(m => CallGraph.CallersFor(m))
+                    .SelectMany(caller =>
+                    {
+                        var callThreadName = GetThreadName(caller);
+                        if (callThreadName.Length > 0)
+                            return new[] { callThreadName };
+                        return GetCallingThreads(caller, visited);
+                    }).Distinct().ToArray();
+
+                lock (MemberThreads)
+                {
+                    MemberThreads[method.FullName] = threads;
+                }
+            }
+
+            return MemberThreads[method.FullName];
+        }
+
+        public static string[] GetCallOnThreadList(Member member)
 		{
 			return GetCallOnThreadList(member, true);
 		}
